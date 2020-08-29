@@ -1,0 +1,90 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "breadcrumbs.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "editor.fontFamily": "FiraCode Nerd Font, Consolas, monospace",
+  "editor.fontWeight": "500",
+  // "editor.fontLigatures": true,
+  // "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  // "editor.letterSpacing": 0.5,
+  "editor.lineHeight": 26,
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.renderIndentGuides": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80, 100, 120],
+  "editor.scrollBeyondLastLine": false,
+  "emmet.includeLanguages": {
+    "vue-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "eslint.alwaysShowStatus": true,
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    // "**/*.yml": "yaml"
+  },
+  "files.exclude": {
+    // "**/*-meta.xml": false
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "window.titleBarStyle": "custom",
+  "window.restoreWindows": "all",
+  "window.zoomLevel": 0,
+  "workbench.settings.editor": "json",
+  "workbench.settings.useSplitJSON": false,
+  "workbench.startupEditor": "none",
+  "[ansible]": {
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false
+    }
+  },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "aws.telemetry": false,
+  "aws.onDefaultRegionMissing": "add",
+  "cucumberautocomplete.gherkinDefinitionPart": "@(given|when|then|step)\\(parsers.parse\\(",
+  "gitlens.views.repositories.files.layout": "tree",
+  "python.languageServer": "Pylance",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "python.showStartPage": false,
+  "vim.useSystemClipboard": true
+}
