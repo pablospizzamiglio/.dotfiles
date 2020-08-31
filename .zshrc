@@ -101,5 +101,5 @@ source $ZSH/oh-my-zsh.sh
 # Custom
 source ~/.exports
 source ~/.aliases
-source /home/pablo/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/pablo/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
