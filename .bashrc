@@ -117,5 +117,6 @@ if ! shopt -oq posix; then
 fi
 
 # Custom
-source ~/.exports
-source ~/.aliases
+source $HOME/.exports
+source $HOME/.aliases
+source $HOME/.cargo/env
