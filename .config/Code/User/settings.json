@@ -87,10 +87,5 @@
   "vim.hlsearch": true,
   "spellright.language": ["es"],
   "spellright.documentTypes": ["markdown", "latex"],
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ]
+  "workbench.editorAssociations": []
 }
