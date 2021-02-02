@@ -1,6 +1,6 @@
-# git init --bare $HOME/.cfg
+# git init --bare $HOME/.dotfiles
 # cfg config --local status.showUntrackedFiles no
-alias cfg="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias cfg="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias l="ls -lah"
 alias la="ls -lAh"
