@@ -12,7 +12,7 @@ export PATH=$NODE_MODULES/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 
 if [[ -n $BASH ]]; then
