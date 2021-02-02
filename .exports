@@ -32,3 +32,6 @@ PS1='$(show_virtual_env)'$PS1
 
 # $HOME/.extras can be used for other settings you don’t want to commit
 source $HOME/.extras
+
+# Rust
+source $HOME/.cargo/env
