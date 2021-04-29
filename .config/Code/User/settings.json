@@ -36,7 +36,6 @@
   "telemetry.enableTelemetry": false,
   "window.restoreWindows": "all",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": false,
   "workbench.startupEditor": "none",
@@ -46,6 +45,10 @@
   "[css]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[haskell]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "haskell.haskell"
   },
   "[html]": {
     "editor.tabSize": 2,
@@ -66,7 +69,8 @@
   "[python]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": false
-    }
+    },
+    "editor.defaultFormatter": "ms-python.python"
   },
   "[yaml]": {
     "editor.insertSpaces": true,
@@ -81,11 +85,17 @@
   "gitlens.views.repositories.files.layout": "tree",
   "python.languageServer": "Pylance",
   "python.showStartPage": false,
+  "python.analysis.useImportHeuristic": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "spellright.language": ["es"],
   "spellright.documentTypes": ["markdown", "latex"],
-  "workbench.editorAssociations": []
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ]
 }
