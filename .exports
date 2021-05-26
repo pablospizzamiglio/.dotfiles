@@ -11,9 +11,10 @@ export PATH=$N_PREFIX/bin:$PATH
 export PATH=$NODE_MODULES/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
+export PATH=$HOME/.poetry/bin:$PATH
 
 # eval "$(rbenv init -)"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 
 if [[ -n $BASH ]]; then
     eval "$(direnv hook bash)"
@@ -35,3 +36,4 @@ source $HOME/.extras
 
 # Rust
 source $HOME/.cargo/env
+
