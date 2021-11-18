@@ -1,0 +1,517 @@
+{
+    "86 - Eighty Six": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://nyaa.si/?page=rss&u=subsplease"
+        ],
+        "assignedCategory": "",
+        "enabled": false,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "16 Oct 2021 16:36:26 +0000",
+        "mustContain": "86 - Eighty Six 1080p",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "American Horror Story": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "21 Oct 2021 03:30:32 +0000",
+        "mustContain": "American Horror Story",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Brooklyn Nine Nine": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "17 Sep 2021 07:00:33 +0000",
+        "mustContain": "Brooklyn Nine Nine",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Castle Rock": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "11 Dec 2019 07:15:26 +0000",
+        "mustContain": "Castle Rock",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Enen no Shouboutai: Ni no Shou": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://www.erai-rss.info/rss-1080/",
+            "https://nyaa.si/?page=rss&u=subsplease"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "11 Dec 2020 17:56:47 +0000",
+        "mustContain": "Enen no Shouboutai 1080p",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Foundation": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "22 Oct 2021 04:40:22 +0000",
+        "mustContain": "Foundation",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Full Dive": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://nyaa.si/?page=rss&u=subsplease"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "01 Jul 2021 07:35:13 +0000",
+        "mustContain": "Full Dive 1080p",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Homeland": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "27 Apr 2020 01:10:17 +0000",
+        "mustContain": "Homeland",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Lovecraft Country": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "21 Jan 2021 07:10:15 +0000",
+        "mustContain": "Lovecraft Country",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Mahouka Koukou no Rettousei: Raihousha Hen": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://www.erai-rss.info/rss-1080/",
+            "https://nyaa.si/?page=rss&u=subsplease"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "26 Dec 2020 17:01:34 +0000",
+        "mustContain": "Mahouka Koukou no Rettousei 1080p",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Mars Red": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://nyaa.si/?page=rss&u=subsplease"
+        ],
+        "assignedCategory": "",
+        "enabled": false,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "28 Jun 2021 18:02:18 +0000",
+        "mustContain": "Mars Red 1080p",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Mr Mercedes": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "13 Nov 2019 23:40:23 +0000",
+        "mustContain": "Mr Mercedes",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Mushoku Tensei": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://nyaa.si/?page=rss&u=subsplease"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "07 Nov 2021 16:01:53 +0000",
+        "mustContain": "Mushoku Tensei 1080p",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Project Blue Book": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "25 Mar 2020 03:10:16 +0000",
+        "mustContain": "Project Blue Book",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Raised by Wolves": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "20 Jan 2021 06:30:30 +0000",
+        "mustContain": "Raised by Wolves",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Ray Donovan": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "19 Jan 2020 05:10:27 +0000",
+        "mustContain": "Ray Donovan",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Rick and Morty": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "12 Oct 2021 15:50:20 +0000",
+        "mustContain": "Rick and Morty",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Sonny Boy": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://nyaa.si/?page=rss&u=subsplease"
+        ],
+        "assignedCategory": "",
+        "enabled": false,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "07 Oct 2021 06:40:59 +0000",
+        "mustContain": "Sonny Boy 1080p",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Supernatural": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 9,
+        "lastMatch": "13 Nov 2020 02:10:14 +0000",
+        "mustContain": "Supernatural",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "The 100": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "01 Oct 2020 06:30:27 +0000",
+        "mustContain": "The 100",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "The Mandalorian": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "18 Dec 2020 08:10:14 +0000",
+        "mustContain": "The Mandalorian",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "The Stand": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "11 Feb 2021 07:10:15 +0000",
+        "mustContain": "The Stand",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "The Walking Dead": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "26 Sep 2021 07:10:14 +0000",
+        "mustContain": "The Walking Dead",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "The X Files": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "22 Mar 2018 01:02:35 -0300",
+        "mustContain": "The X Files",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "True Detective": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "25 Feb 2019 03:30:46 +0000",
+        "mustContain": "True Detective",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Westworld": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "04 May 2020 04:10:17 +0000",
+        "mustContain": "Westworld",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    },
+    "Your Honor": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://showrss.info/user/47708.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
+        ],
+        "assignedCategory": "",
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "14 Feb 2021 05:10:14 +0000",
+        "mustContain": "Your Honor",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "torrentContentLayout": null,
+        "useRegex": false
+    }
+}
