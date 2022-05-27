@@ -2,16 +2,20 @@
 export EDITOR=vim
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!**/.git/*'"
-export PYENV_ROOT=$HOME/.pyenv
-export N_PREFIX=$HOME/.n
-export NODE_MODULES=$HOME/.node_modules
+export PIPENV_VENV_IN_PROJECT=1
 
-export PATH=$PYENV_ROOT/bin:$PATH
-export PATH=$N_PREFIX/bin:$PATH
-export PATH=$NODE_MODULES/bin:$PATH
+export GOPATH=$HOME/.go
+export NODE_MODULES=$HOME/.node_modules
+export PYENV_ROOT=$HOME/.pyenv
+export VOLTA_HOME=$HOME/.volta
+
+# Path Additions
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
+export PATH=$HOME/.volta/bin:$PATH
+export PATH=$NODE_MODULES/bin:$PATH
+export PATH=$PYENV_ROOT/bin:$PATH
 
 # eval "$(rbenv init -)"
 eval "$(pyenv init --path)"
@@ -35,5 +39,4 @@ PS1='$(show_virtual_env)'$PS1
 source $HOME/.extras
 
 # Rust
-source $HOME/.cargo/env
-
+#source $HOME/.cargo/env
