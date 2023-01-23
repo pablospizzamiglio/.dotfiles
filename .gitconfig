@@ -1,0 +1,13 @@
+[color]
+	ui = true
+[completion]
+	commands = -gitk
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[user]
+	name = pablospizzamiglio
+	email = spizzamiglio.pablo@gmail.com
