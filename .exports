@@ -7,9 +7,9 @@ export EDITOR=vim
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!**/.git/*'"
 export PIPENV_VENV_IN_PROJECT=1
 
+export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 #export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
-export COMPOSE_DOCKER_CLI_BUILD=1
 
 export GOPATH="$HOME"/.go
 export N_PREFIX="$HOME"/.n
@@ -20,7 +20,6 @@ export PYENV_ROOT="$HOME"/.pyenv
 export PATH="$GOPATH"/bin:"$PATH"
 export PATH="$HOME"/.emacs.d/bin:"$PATH"
 export PATH="$HOME"/.local/bin:"$PATH"
-export PATH="$HOME"/.poetry/bin:"$PATH"
 export PATH="$HOME"/.poetry/bin:"$PATH"
 export PATH="$N_PREFIX"/bin:"$PATH"
 export PATH="$NODE_MODULES"/bin:"$PATH"
