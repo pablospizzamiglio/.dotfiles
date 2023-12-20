@@ -6,15 +6,17 @@ export EDITOR=vim
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!**/.git/*'"
 export PIPENV_VENV_IN_PROJECT=1
+export PYTHONDONTWRITEBYTECODE=1
 
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
-#export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
+export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
 
 export GOPATH="$HOME"/.go
 export N_PREFIX="$HOME"/.n
 export NODE_MODULES="$HOME"/.node_modules
 export PYENV_ROOT="$HOME"/.pyenv
+export RBENV_ROOT="$HOME"/.rbenv
 
 # Path Additions
 export PATH="$GOPATH"/bin:"$PATH"
@@ -24,15 +26,17 @@ export PATH="$HOME"/.poetry/bin:"$PATH"
 export PATH="$N_PREFIX"/bin:"$PATH"
 export PATH="$NODE_MODULES"/bin:"$PATH"
 export PATH="$PYENV_ROOT"/bin:"$PATH"
+export PATH="$RBENV_ROOT"/bin:"$PATH"
 
-# eval "$(rbenv init -)"
-eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 if [[ -n $BASH ]]; then
-    eval "$(direnv hook bash)"
+  eval "$(rbenv init - bash)"
+  eval "$(direnv hook bash)"
 elif [[ -n $ZSH_NAME ]]; then
-    eval "$(direnv hook zsh)"
-    setopt PROMPT_SUBST
+  eval "$(rbenv init - zsh)"
+  eval "$(direnv hook zsh)"
+  setopt PROMPT_SUBST
 fi
 
 # Direnv workaround to show Python virtual environments
