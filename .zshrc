@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Custom
+setopt aliases
 source "$HOME"/.exports
 source "$HOME"/.aliases
 source "$ZSH"/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
