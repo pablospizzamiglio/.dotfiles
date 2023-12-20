@@ -11,3 +11,12 @@
 [user]
 	name = pablospizzamiglio
 	email = spizzamiglio.pablo@gmail.com
+	signingKey = /home/pablo/.ssh/id_ed25519.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
+[gpg "ssh"]
+	allowedSignersFile = /home/pablo/.ssh/allowed_signers
