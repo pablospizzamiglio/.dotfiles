@@ -10,7 +10,7 @@ export PYTHONDONTWRITEBYTECODE=1
 
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
-export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 export GOPATH="$HOME"/.go
 export N_PREFIX="$HOME"/.n
@@ -31,10 +31,10 @@ export PATH="$RBENV_ROOT"/bin:"$PATH"
 eval "$(pyenv init -)"
 
 if [[ -n $BASH ]]; then
-  eval "$(rbenv init - bash)"
+  # eval "$(rbenv init - bash)"
   eval "$(direnv hook bash)"
 elif [[ -n $ZSH_NAME ]]; then
-  eval "$(rbenv init - zsh)"
+  # eval "$(rbenv init - zsh)"
   eval "$(direnv hook zsh)"
   setopt PROMPT_SUBST
 fi
@@ -47,8 +47,8 @@ show_virtual_env() {
 }
 PS1="$(show_virtual_env)"$PS1
 
-# $HOME/.extras can be used for other settings you don’t want to commit
-source "$HOME"/.extras
-
 # Rust
 #source $HOME/.cargo/env
+
+# $HOME/.extras can be used for other settings you don’t want to commit
+source "$HOME"/.extras
