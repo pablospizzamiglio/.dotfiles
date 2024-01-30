@@ -9,18 +9,22 @@
 
 ## How to Install
 
+Clone into `$HOME` and then run:
+
 ```shell
-stow --target=$HOME .
+cd .dotfiles
+
+stow */
 ```
 
 ## How to Remove
 
 ```shell
-stow --target=$HOME -D .
+stow -D */
 ```
 
 ## How to Re-apply
 
 ```shell
-stow --target=$HOME -R .
+stow -R */
 ```
