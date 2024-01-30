@@ -9,7 +9,11 @@ export PYTHONUNBUFFERED=1
 
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
-export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+
+if ! grep -qi microsoft /proc/version # not in WSL
+then
+    export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+fi
 
 export GOPATH="$HOME"/.go
 export N_PREFIX="$HOME"/.n
