@@ -18,3 +18,9 @@ stow --target=$HOME .
 ```shell
 stow --target=$HOME -D .
 ```
+
+## How to Re-apply
+
+```shell
+stow --target=$HOME -R .
+```
