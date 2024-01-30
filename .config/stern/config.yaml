@@ -1,0 +1,2 @@
+output: default
+template: '{{.Namespace}} {{color .ContainerColor .ContainerName}} {{color .PodColor .PodName}} | {{.Message}}{{"\n"}}'
