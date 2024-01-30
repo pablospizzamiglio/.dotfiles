@@ -1,4 +1,5 @@
 alias vim=nvim
+alias cat=bat
 alias l="ls -lah"
 alias la="ls -lAh"
 alias ll="ls -lh"
