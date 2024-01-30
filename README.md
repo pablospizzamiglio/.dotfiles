@@ -12,3 +12,9 @@
 ```shell
 stow --target=$HOME .
 ```
+
+## How to Remove
+
+```shell
+stow --target=$HOME -D .
+```
