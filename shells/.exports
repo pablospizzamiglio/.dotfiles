@@ -30,6 +30,7 @@ export PATH="$NODE_MODULES"/bin:"$PATH"
 export PATH="$PYENV_ROOT"/bin:"$PATH"
 
 eval "$(pyenv init -)"
+eval "$(zoxide init zsh)"
 
 # Rust
 #source $HOME/.cargo/env
