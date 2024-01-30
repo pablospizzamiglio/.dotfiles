@@ -1,6 +1,3 @@
-#!/bin/bash
-# shellcheck source=/dev/null
-
 # Make NeoVim the default editor.
 export EDITOR=nvim
 
