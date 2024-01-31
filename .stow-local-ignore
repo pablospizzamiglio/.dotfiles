@@ -1,4 +1,6 @@
 \.git
 .gitmodules
+.gitignore
 README.md
 LICENSE
+tmux/.config/tmux/plugins
