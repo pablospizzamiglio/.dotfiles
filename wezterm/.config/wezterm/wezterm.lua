@@ -16,7 +16,7 @@ end
 config.color_scheme = "Catppuccin Macchiato"
 config.font = wezterm.font("Fira Code Nerd Font Mono")
 config.font_size = 11.0
-config.line_height = 1.3
+config.line_height = 1.4
 
 -- and finally, return the configuration to wezterm
 return config
