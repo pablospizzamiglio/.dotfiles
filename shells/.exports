@@ -49,6 +49,6 @@ eval "$(zoxide init zsh)"
 source "$HOME"/.extras
 
 
-gstb() {
+gsb() {
     git branch -r | fzf | tr -d "origin/" | xargs git switch
 }
