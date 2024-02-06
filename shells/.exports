@@ -1,7 +1,11 @@
 # Make NeoVim the default editor.
 export EDITOR=nvim
 
-export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!**/.git/*'"
+export FZF_DEFAULT_COMMAND=" \
+  fd --type f --hidden \
+  --exclude .git \
+  --exclude .venv \
+  --exclude node_modules"
 export FZF_DEFAULT_OPTS=" \
 --info=inline --layout=reverse --height=50% \
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
