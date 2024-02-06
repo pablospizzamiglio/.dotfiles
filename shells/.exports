@@ -25,30 +25,29 @@ then
     export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
 
-export GOPATH="$HOME"/.go
-export N_PREFIX="$HOME"/.n
-export NODE_MODULES="$HOME"/.node_modules
-export PYENV_ROOT="$HOME"/.pyenv
+export GOPATH="$HOME/.go"
+export N_PREFIX="$HOME/.n"
+export NODE_MODULES="$HOME/.node_modules"
+export PYENV_ROOT="$HOME/.pyenv"
 
 # Path Additions
-export PATH="$GOPATH"/bin:"$PATH"
-export PATH="$HOME"/.emacs.d/bin:"$PATH"
-export PATH="$HOME"/.local/bin:"$PATH"
-export PATH="$HOME"/.poetry/bin:"$PATH"
-export PATH="$N_PREFIX"/bin:"$PATH"
-export PATH="$NODE_MODULES"/bin:"$PATH"
-export PATH="$PYENV_ROOT"/bin:"$PATH"
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$N_PREFIX/bin:$PATH"
+export PATH="$NODE_MODULES/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 eval "$(pyenv init -)"
 eval "$(zoxide init zsh)"
 
 # Rust
-#source $HOME/.cargo/env
-
-# $HOME/.extras can be used for other settings you don’t want to commit
-source "$HOME"/.extras
-
+source "$HOME/.cargo/env"
 
 gsb() {
     git branch -r | fzf | tr -d "origin/" | xargs git switch
 }
+
+# $HOME/.extras can be used for other settings you don’t want to commit
+source "$HOME/.extras"

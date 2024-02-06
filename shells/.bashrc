@@ -6,9 +6,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -18,6 +17,5 @@ export PATH
 # User specific aliases and functions
 
 # Custom
-source $HOME/.exports
-source $HOME/.aliases
-
+source "$HOME/.exports"
+source "$HOME/.aliases"

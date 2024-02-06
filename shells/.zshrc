@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME"/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,7 +73,7 @@ plugins=(colored-man-pages)
 # Skip all aliases, in lib files and enabled plugins
 zstyle ':omz:*' aliases no
 
-source "$ZSH"/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -103,8 +103,8 @@ source "$ZSH"/oh-my-zsh.sh
 
 # Custom
 setopt aliases
-source "$HOME"/.exports
-source "$HOME"/.aliases
+source "$HOME/.exports"
+source "$HOME/.aliases"
 
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
