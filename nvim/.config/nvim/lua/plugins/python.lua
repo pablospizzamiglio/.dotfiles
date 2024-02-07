@@ -5,8 +5,7 @@ return {
       local nls = require("null-ls")
       local venv_bin_path = ".venv/bin"
 
-      -- opts.sources = vim.list_extend(opts.sources or {}, {
-      opts.sources = vim.list_extend({}, {
+      opts.sources = vim.list_extend(opts.sources or {}, {
         nls.builtins.diagnostics.flake8.with({
           prefer_local = venv_bin_path,
           -- { extra_args = { "--config", "./setup.cfg" } }
