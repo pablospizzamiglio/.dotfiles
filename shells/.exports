@@ -46,10 +46,12 @@ eval "$(zoxide init zsh)"
 source "$HOME/.cargo/env"
 
 gsb() {
-    local branch=$(git branch -a --format "%(refname:short)"| sed 's/origin\///' | grep -v origin | sort -u | fzf) # | xargs git switch
-    if [ -n "$branch" ]
+    local branches selected_branch
+    branches=$(git branch -a --format "%(refname:short)"| sed 's/origin\///' | grep -v origin | sort -u)
+    selected_branch=$(echo "$branches" | fzf)
+    if echo "$branches" | grep -qw "$selected_branch"
     then
-        git switch "$branch"
+        git switch "$selected_branch"
     fi
 }
 
