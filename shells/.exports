@@ -46,7 +46,11 @@ eval "$(zoxide init zsh)"
 source "$HOME/.cargo/env"
 
 gsb() {
-    git branch -r | fzf | tr -d "origin/" | xargs git switch
+    local branch=$(git branch -a --format "%(refname:short)"| sed 's/origin\///' | grep -v origin | sort -u | fzf) # | xargs git switch
+    if [ -n "$branch" ]
+    then
+        git switch "$branch"
+    fi
 }
 
 # $HOME/.extras can be used for other settings you don’t want to commit
