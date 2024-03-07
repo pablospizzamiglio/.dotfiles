@@ -1,12 +1,15 @@
 return {
   {
     "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
     opts = function(_, opts)
       local nls = require("null-ls")
       local venv_bin_path = ".venv/bin"
 
       opts.sources = vim.list_extend(opts.sources or {}, {
-        nls.builtins.diagnostics.flake8.with({
+        require("none-ls.diagnostics.flake8").with({
           prefer_local = venv_bin_path,
           -- { extra_args = { "--config", "./setup.cfg" } }
         }),
