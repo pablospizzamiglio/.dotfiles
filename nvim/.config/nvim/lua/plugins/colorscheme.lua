@@ -8,6 +8,14 @@ return {
     },
   },
   {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+    name = "gruvbox",
+    opts = {
+      contrast = "hard",
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin",
