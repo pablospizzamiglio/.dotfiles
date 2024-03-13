@@ -1,5 +1,4 @@
 alias vim=nvim
-alias cat=bat
 alias ls="ls --color=auto"
 alias l="ls -lah"
 alias la="ls -lAh"
