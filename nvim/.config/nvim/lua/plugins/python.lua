@@ -1,34 +1,19 @@
 return {
   {
-    "nvimtools/none-ls.nvim",
-    dependencies = {
-      "nvimtools/none-ls-extras.nvim",
-    },
+    "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-      local nls = require("null-ls")
-      local venv_bin_path = ".venv/bin"
-
-      opts.sources = vim.list_extend(opts.sources or {}, {
-        require("none-ls.diagnostics.flake8").with({
-          prefer_local = venv_bin_path,
-          -- { extra_args = { "--config", "./setup.cfg" } }
-        }),
-        nls.builtins.diagnostics.mypy.with({
-          prefer_local = venv_bin_path,
-        }),
-        nls.builtins.formatting.black.with({
-          prefer_local = venv_bin_path,
-        }),
-        nls.builtins.formatting.isort.with({
-          prefer_local = venv_bin_path,
-        }),
+      vim.list_extend(opts.ensure_installed or {}, {
+        "ninja",
+        "python",
+        "rst",
+        "toml",
       })
     end,
   },
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
-      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, {
+      vim.list_extend(opts.ensure_installed or {}, {
         "black",
         "isort",
         "mypy",
@@ -38,21 +23,9 @@ return {
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "ninja", "python", "rst", "toml" })
-      end
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        -- black = {},
-        -- isort = {},
-        -- mypy = {},
-        -- flake8 = {},
         pyright = {
           capabilities = {
             -- Ignore pyright diagnostics to prevent duplication
@@ -75,40 +48,34 @@ return {
             },
           },
         },
-        -- ruff_lsp = { mason = false },
-        -- ruff_lsp = {
-        --   keys = {
-        --     {
-        --       "<leader>co",
-        --       function()
-        --         vim.lsp.buf.code_action({
-        --           apply = true,
-        --           context = {
-        --             only = { "source.organizeImports" },
-        --             diagnostics = {},
-        --           },
-        --         })
-        --       end,
-        --       desc = "Organize Imports",
-        --     },
-        --   },
-        -- },
       },
-      -- setup = {
-      --   ruff_lsp = function()
-      --     require("lazyvim.util").lsp.on_attach(function(client, _)
-      --       if client.name == "ruff_lsp" then
-      --         -- Disable hover in favor of Pyright
-      --         client.server_capabilities.hoverProvider = false
-      --       end
-      --     end)
-      --   end,
-      -- },
     },
   },
   {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        python = { "isort", "black" },
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    ft = { "python" },
+    opts = function(_, opts)
+      local linters_by_ft = {
+        python = { "flake8", "mypy" },
+      }
+
+      -- extend opts.linters_by_ft
+      for ft, linters_ in pairs(linters_by_ft) do
+        opts.linters_by_ft[ft] = opts.linters_by_ft[ft] or {}
+        vim.list_extend(opts.linters_by_ft[ft], linters_)
+      end
+    end,
+  },
+  {
     "nvim-neotest/neotest",
-    optional = true,
     dependencies = {
       "nvim-neotest/neotest-python",
     },
@@ -124,7 +91,6 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    optional = true,
     dependencies = {
       "mfussenegger/nvim-dap-python",
       -- stylua: ignore
