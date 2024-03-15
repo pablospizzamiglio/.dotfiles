@@ -1,5 +1,5 @@
 [color]
-	ui = true
+    ui = true
 [completion]
 	commands = -gitk
 [fetch]
@@ -20,3 +20,16 @@
 	gpgSign = true
 [gpg "ssh"]
 	allowedSignersFile = /home/pablo/.ssh/allowed_signers
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    syntax-theme = Catppuccin-macchiato
+    navigate = true
+    light = false
+    line-numbers = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
