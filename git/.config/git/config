@@ -22,6 +22,7 @@
 	allowedSignersFile = /home/pablo/.ssh/allowed_signers
 [core]
     pager = delta
+    fsmonitor = true
 [interactive]
     diffFilter = delta --color-only
 [delta]
