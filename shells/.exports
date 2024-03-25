@@ -22,7 +22,7 @@ export PYTHONUNBUFFERED=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
-if ! grep -qi microsoft /proc/version # not in WSL
+if [ -z "$WSL_DISTRO_NAME" ]
 then
     export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
