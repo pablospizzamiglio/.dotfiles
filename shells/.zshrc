@@ -66,7 +66,6 @@ setopt prompt_subst
 PROMPT="%(?:%{$fg_bold[green]%}%1{➜%}:%{$fg_bold[red]%}%1{➜%}) %{$fg[cyan]%}%c%{$reset_color%} "
 PROMPT+='${vcs_info_msg_0_}'
 
-
 # History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 [ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
