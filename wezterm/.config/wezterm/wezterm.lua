@@ -11,12 +11,22 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
+-- config.use_fancy_tab_bar = true
+-- config.front_end = "OpenGL"
 
--- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Macchiato"
-config.font = wezterm.font("Fira Code Nerd Font Mono")
+-- config.font = wezterm.font("Fira Code Nerd Font Mono")
+config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 11.0
-config.line_height = 1.4
+-- config.line_height = 1.4
+config.line_height = 1.2
+
+-- config.window_padding = {
+-- 	left = "1cell",
+-- 	right = "1cell",
+-- 	top = "0.5cell",
+-- 	bottom = "0.5cell",
+-- }
 
 -- and finally, return the configuration to wezterm
 return config
