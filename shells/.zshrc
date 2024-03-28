@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Load env vars
+# source "$HOME/.zshenv"
+
 # Enable colors
 autoload -U colors && colors
 
@@ -35,6 +38,7 @@ bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Load version control information
+# https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information
 autoload -Uz vcs_info add-zsh-hook
 add-zsh-hook precmd vcs_info
 
@@ -59,12 +63,9 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-dirty
 
 # Set up the prompt (with VCS information)
 setopt prompt_subst
-# PROMPT='-> %1~ ${vcs_info_msg_0_} %# '
 PROMPT="%(?:%{$fg_bold[green]%}%1{➜%}:%{$fg_bold[red]%}%1{➜%}) %{$fg[cyan]%}%c%{$reset_color%} "
 PROMPT+='${vcs_info_msg_0_}'
-RPROMPT='${vcs_info_msg_1_}'
 
-# source ~/.zshenv
 
 # History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
