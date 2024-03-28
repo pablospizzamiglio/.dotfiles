@@ -14,10 +14,9 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
-
-# Custom
 source "$HOME/.aliases"
 source "$HOME/.exports"
+
 # $HOME/.extras can be used for other settings you don’t want to commit
+# shellcheck source=/dev/null
 [ -f "$HOME/.extras" ] && source "$HOME/.extras"

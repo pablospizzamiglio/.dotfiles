@@ -1,6 +1,7 @@
-# Make NeoVim the default editor.
+# Make NeoVim the default editor
 export EDITOR=nvim
 
+# Use nvim as a pager for man
 export MANPAGER="nvim +Man!"
 
 export FZF_DEFAULT_COMMAND=" \
@@ -9,10 +10,10 @@ export FZF_DEFAULT_COMMAND=" \
   --exclude .venv \
   --exclude node_modules"
 export FZF_DEFAULT_OPTS=" \
---info=inline --layout=reverse --height=50% \
---color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
---color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
---color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
+  --info=inline --layout=reverse --height=50% \
+  --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+  --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+  --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 
 export PIP_REQUIRE_VIRTUALENV=1
 export PIPENV_VENV_IN_PROJECT=1
@@ -22,9 +23,8 @@ export PYTHONUNBUFFERED=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
-if [ -z "$WSL_DISTRO_NAME" ]
-then
-    export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+if [ -z "$WSL_DISTRO_NAME" ]; then
+  export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
 
 export GOPATH="$HOME/.go"
@@ -33,7 +33,7 @@ export NODE_MODULES="$HOME/.node_modules"
 export PYENV_ROOT="$HOME/.pyenv"
 export RBENV_ROOT="$HOME/.rbenv"
 
-# Path Additions
+# Path additions
 PATH="$GOPATH/bin:$PATH"
 PATH="$HOME/.emacs.d/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
@@ -46,23 +46,22 @@ export PATH
 
 eval "$(pyenv init -)"
 
-if [[ -n $BASH ]]; then
+if [ -n "$BASH" ]; then
   eval "$(rbenv init - bash)"
   eval "$(zoxide init bash)"
-elif [[ -n $ZSH_NAME ]]; then
+elif [ -n "$ZSH_NAME" ]; then
   eval "$(rbenv init - zsh)"
   eval "$(zoxide init zsh)"
 fi
 
-# Rust
-[[ -d "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+[ -d "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 gsb() {
-    local branches selected_branch
-    branches=$(git branch -a --format "%(refname:short)"| sed 's/origin\///' | grep -v origin | sort -u)
-    selected_branch=$(echo "$branches" | fzf)
-    if echo "$branches" | grep -qw "$selected_branch"
-    then
-        git switch "$selected_branch"
-    fi
+  local branches selected_branch
+  branches=$(git branch -a --format "%(refname:short)"| sed 's/origin\///' | grep -v origin | sort -u)
+  selected_branch=$(echo "$branches" | fzf)
+  if echo "$branches" | grep -qw "$selected_branch"
+  then
+    git switch "$selected_branch"
+  fi
 }
