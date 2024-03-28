@@ -17,5 +17,7 @@ export PATH
 # User specific aliases and functions
 
 # Custom
-source "$HOME/.exports"
 source "$HOME/.aliases"
+source "$HOME/.exports"
+# $HOME/.extras can be used for other settings you don’t want to commit
+[ -f "$HOME/.extras" ] && source "$HOME/.extras"

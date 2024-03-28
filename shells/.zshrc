@@ -90,10 +90,12 @@ setopt interactive_comments # allow comments in interactive shells
 # Disable paste highlight
 zle_highlight=('paste:none')
 
-source "$HOME/.exports"
-source "$HOME/.aliases"
-
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/fzf/shell/key-bindings.zsh
+
+source "$HOME/.aliases"
+source "$HOME/.exports"
+# $HOME/.extras can be used for other settings you don’t want to commit
+[ -f "$HOME/.extras" ] && source "$HOME/.extras"
 
