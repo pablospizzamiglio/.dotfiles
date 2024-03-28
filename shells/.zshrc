@@ -39,6 +39,7 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Load version control information
 # https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information
+# https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples
 autoload -Uz vcs_info add-zsh-hook
 add-zsh-hook precmd vcs_info
 
