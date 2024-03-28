@@ -1,3 +1,5 @@
+# .zshrc
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -40,31 +42,56 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # Load version control information
 # https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information
 # https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples
-autoload -Uz vcs_info add-zsh-hook
+autoload -Uz add-zsh-hook vcs_info
 add-zsh-hook precmd vcs_info
 
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' nvcsformats ""
-# Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git*' check-for-changes true
-zstyle ':vcs_info:git*' check-for-staged-changes true
-zstyle ':vcs_info:git*' formats "%{$fg[blue]%}%s:(%{$fg[red]%}%b%{$fg[blue]%})%{$reset_color%} %m%u%c%"
-zstyle ':vcs_info:git*' actionformats "%{$fg[blue]%}%s:(%{$fg[red]%}%b%{$reset_color%}|%{$fg[yellow]%}%a%{$fg[blue]%})%{$reset_color%} " # %m%u%c% "
-zstyle ':vcs_info:git*' stagedstr "%{$fg[green]%}%{$reset_color%}"
-zstyle ':vcs_info:git*' unstagedstr "%{$fg[red]%}%{$reset_color%}"
-zstyle ':vcs_info:git*+set-message:*' hooks git-dirty
+# Taken from ohmyzsh
+# https://github.com/ohmyzsh/ohmyzsh/blob/1d09c6bb0a950756a65b02457842933e3aa493eb/lib/termsupport.zsh#L147
+# Emits the control sequence to notify many terminal emulators
+# of the cwd
+#
+# Identifies the directory using a file: URI scheme, including
+# the host name to disambiguate local vs. remote paths.
+function termsupport_cwd() {
+  # Percent-encode the host and path names.
+  local url_host url_path
+  url_host="$HOST" || return 1
+  url_path="$PWD" || return 1
+
+  # Konsole errors if the HOST is provided
+  [[ -z "$KONSOLE_PROFILE_NAME" && -z "$KONSOLE_DBUS_SESSION"  ]] || url_host=""
+
+  # common control sequence (OSC 7) to set current host and path
+  printf "\e]7;file://%s%s\e\\" "${url_host}" "${url_path}"
+}
+
+# Use a precmd hook instead of a chpwd hook to avoid contaminating output
+# i.e. when a script or function changes directory without `cd -q`, chpwd
+# will be called the output may be swallowed by the script or function.
+add-zsh-hook precmd termsupport_cwd
 
 +vi-git-dirty() {
   local git_status=$(git --no-optional-locks status --porcelain 2> /dev/null | tail -n 1)
   if [[ -n $git_status ]]
   then
-    hook_com[staged]+="%{$fg[yellow]%}✗%{$reset_color%} "
+      hook_com[staged]+="%{$fg[yellow]%}✗%{$reset_color%} "
   fi
 }
 
+zstyle ':vcs_info:*' enable git
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:*' nvcsformats ""
+zstyle ':vcs_info:git*' check-for-changes true
+zstyle ':vcs_info:git*' check-for-staged-changes true
+zstyle ':vcs_info:git*' formats "%{$fg[blue]%}%s:(%{$fg[red]%}%b%{$fg[blue]%})%{$reset_color%} %m%u%c"
+zstyle ':vcs_info:git*' actionformats "%{$fg[blue]%}%s:(%{$fg[red]%}%b%{$reset_color%}|%{$fg[yellow]%}%a%{$fg[blue]%})%{$reset_color%} " # %m%u%c "
+zstyle ':vcs_info:git*' stagedstr "%{$fg[green]%}%{$reset_color%}"
+zstyle ':vcs_info:git*' unstagedstr "%{$fg[red]%}%{$reset_color%}"
+zstyle ':vcs_info:git*+set-message:*' hooks git-dirty
+
 # Set up the prompt (with VCS information)
 setopt prompt_subst
-PROMPT="%(?:%{$fg_bold[green]%}%1{➜%}:%{$fg_bold[red]%}%1{➜%}) %{$fg[cyan]%}%c%{$reset_color%} "
+PROMPT="%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})➜ %{$fg[cyan]%}%1~%{$reset_color%} "
 PROMPT+='${vcs_info_msg_0_}'
 
 # History file configuration
@@ -91,12 +118,13 @@ setopt interactive_comments # allow comments in interactive shells
 # Disable paste highlight
 zle_highlight=('paste:none')
 
+source "$HOME/.aliases"
+source "$HOME/.exports"
+
+# $HOME/.extras can be used for other settings you don’t want to commit
+# shellcheck source=/dev/null
+[ -f "$HOME/.extras" ] && source "$HOME/.extras"
+
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/fzf/shell/key-bindings.zsh
-
-source "$HOME/.aliases"
-source "$HOME/.exports"
-# $HOME/.extras can be used for other settings you don’t want to commit
-[ -f "$HOME/.extras" ] && source "$HOME/.extras"
-
