@@ -7,10 +7,59 @@
 # source "$HOME/.zshenv"
 
 # Enable colors
-autoload -U colors && colors
+autoload -Uz colors && colors
+
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# Create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -g -A key
+
+key[Home]="${terminfo[khome]}"
+key[End]="${terminfo[kend]}"
+key[Insert]="${terminfo[kich1]}"
+key[Backspace]="${terminfo[kbs]}"
+key[Delete]="${terminfo[kdch1]}"
+key[Up]="${terminfo[kcuu1]}"
+key[Down]="${terminfo[kcud1]}"
+key[Left]="${terminfo[kcub1]}"
+key[Right]="${terminfo[kcuf1]}"
+key[PageUp]="${terminfo[kpp]}"
+key[PageDown]="${terminfo[knp]}"
+key[Shift-Tab]="${terminfo[kcbt]}"
+key[Control-Left]="${terminfo[kLFT5]}"
+key[Control-Right]="${terminfo[kRIT5]}"
+
+# Setup key accordingly
+[[ -n "${key[Home]}"          ]] && bindkey -- "${key[Home]}"          beginning-of-line
+[[ -n "${key[End]}"           ]] && bindkey -- "${key[End]}"           end-of-line
+[[ -n "${key[Insert]}"        ]] && bindkey -- "${key[Insert]}"        overwrite-mode
+[[ -n "${key[Backspace]}"     ]] && bindkey -- "${key[Backspace]}"     backward-delete-char
+[[ -n "${key[Delete]}"        ]] && bindkey -- "${key[Delete]}"        delete-char
+[[ -n "${key[Up]}"            ]] && bindkey -- "${key[Up]}"            up-line-or-beginning-search
+[[ -n "${key[Down]}"          ]] && bindkey -- "${key[Down]}"          down-line-or-beginning-search
+[[ -n "${key[Left]}"          ]] && bindkey -- "${key[Left]}"          backward-char
+[[ -n "${key[Right]}"         ]] && bindkey -- "${key[Right]}"         forward-char
+[[ -n "${key[PageUp]}"        ]] && bindkey -- "${key[PageUp]}"        beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}"      ]] && bindkey -- "${key[PageDown]}"      end-of-buffer-or-history
+[[ -n "${key[Shift-Tab]}"     ]] && bindkey -- "${key[Shift-Tab]}"     reverse-menu-complete
+[[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
+[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	autoload -Uz add-zle-hook-widget
+	function zle_application_mode_start { echoti smkx }
+	function zle_application_mode_stop { echoti rmkx }
+	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+fi
 
 # Enable completions
-autoload -U compinit && compinit -u
+autoload -Uz compinit && compinit -u
 _comp_options+=(globdots) # include hidden files
 
 # Use cache for commands using cache
@@ -26,18 +75,6 @@ zstyle ':completion:*' special-dirs true
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # Disable named-directories autocompletion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
-
-# Move through the completion menu backwards
-bindkey '^[[Z' reverse-menu-complete # Shift-Tab
-
-# Cycle through history based on characters already typed on the line
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Load version control information
 # https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information
@@ -72,8 +109,7 @@ add-zsh-hook precmd termsupport_cwd
 
 +vi-git-dirty() {
   local git_status=$(git --no-optional-locks status --porcelain 2> /dev/null | tail -n 1)
-  if [[ -n $git_status ]]
-  then
+  if [[ -n $git_status ]]; then
       hook_com[staged]+="%{$fg[yellow]%}✗%{$reset_color%} "
   fi
 }
@@ -95,9 +131,9 @@ PROMPT="%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})➜ %{$fg[cyan]%}%1~%{$reset_c
 PROMPT+='${vcs_info_msg_0_}'
 
 # History file configuration
-[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
-[ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
-[ "$SAVEHIST" -lt 10000 ] && SAVEHIST=10000
+[[ -z "$HISTFILE" ]] && HISTFILE="$HOME/.zsh_history"
+[[ "$HISTSIZE" -lt 50000 ]] && HISTSIZE=50000
+[[ "$SAVEHIST" -lt 10000 ]] && SAVEHIST=10000
 
 # History command configuration
 setopt extended_history # record timestamp of command in HISTFILE
@@ -123,7 +159,7 @@ source "$HOME/.exports"
 
 # $HOME/.extras can be used for other settings you don’t want to commit
 # shellcheck source=/dev/null
-[ -f "$HOME/.extras" ] && source "$HOME/.extras"
+[[ -f "$HOME/.extras" ]] && source "$HOME/.extras"
 
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
