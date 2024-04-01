@@ -23,7 +23,7 @@ export PYTHONUNBUFFERED=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
-if [ -z "$WSL_DISTRO_NAME" ]; then
+if [[ -z "$WSL_DISTRO_NAME" ]]; then
   export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
 
@@ -46,7 +46,7 @@ export PATH
 
 eval "$(pyenv init -)"
 
-if [ -n "$BASH" ]; then
+if [[ -n "$BASH" ]]; then
   eval "$(rbenv init - bash)"
   eval "$(zoxide init bash)"
 elif [ -n "$ZSH_NAME" ]; then
@@ -54,7 +54,7 @@ elif [ -n "$ZSH_NAME" ]; then
   eval "$(zoxide init zsh)"
 fi
 
-[ -d "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[[ -d "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 gsb() {
   local branches selected_branch
