@@ -15,6 +15,7 @@ zle -N down-line-or-beginning-search
 
 # Create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
+# https://wiki.archlinux.org/title/Zsh#Key_bindings
 typeset -g -A key
 
 key[Home]="${terminfo[khome]}"
