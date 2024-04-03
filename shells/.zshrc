@@ -115,6 +115,7 @@ add-zsh-hook precmd termsupport_cwd
   fi
 }
 
+# Enable git for vcs_info
 zstyle ':vcs_info:*' enable git
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:*' nvcsformats ""
@@ -126,7 +127,9 @@ zstyle ':vcs_info:git*' stagedstr "%{$fg[green]%}%{$reset_color%}"
 zstyle ':vcs_info:git*' unstagedstr "%{$fg[red]%}%{$reset_color%}"
 zstyle ':vcs_info:git*+set-message:*' hooks git-dirty
 
-# Set up the prompt (with VCS information)
+# Set up the prompt 
+# - without priviledge information
+# - with VCS information
 setopt prompt_subst
 PROMPT="%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})➜ %{$fg[cyan]%}%1~%{$reset_color%} "
 PROMPT+='${vcs_info_msg_0_}'
@@ -154,6 +157,25 @@ setopt interactive_comments # allow comments in interactive shells
 
 # Disable paste highlight
 zle_highlight=('paste:none')
+
+# Set up window title
+# - without priviledge information
+case $TERM in
+  termite|*xterm*|rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term|foot)
+    precmd() { print -Pn "\e]0;%n@%M:%~\a" }
+    preexec() { print -Pn "\e]0;%n@%M:%~ ($1)\a" }
+    ;;
+  screen|screen-256color)
+    precmd() {
+      print -Pn "\e]83;title \"$1\"\a"
+      print -Pn "\e]0;%n@%M:%~\a"
+    }
+    preexec() {
+      print -Pn "\e]83;title \"$1\"\a" 
+      print -Pn "\e]0;%n@%M:%~ ($1)\a"
+    }
+    ;;
+esac
 
 source "$HOME/.aliases"
 source "$HOME/.exports"
