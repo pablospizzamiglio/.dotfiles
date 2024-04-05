@@ -27,17 +27,20 @@ if [[ -z "$WSL_DISTRO_NAME" ]]; then
   export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
 
-export GOPATH="$HOME/.go"
-export N_PREFIX="$HOME/.n"
-export NODE_MODULES="$HOME/.node_modules"
-export PYENV_ROOT="$HOME/.pyenv"
-export RBENV_ROOT="$HOME/.rbenv"
+devtools="$HOME/.devtools"
+
+export CARGO_HOME="$devtools/cargo"
+export GOPATH="$devtools/go"
+export N_PREFIX="$devtools/n"
+export NODE_MODULES="$devtools/node_modules"
+export PYENV_ROOT="$devtools/pyenv"
+export RBENV_ROOT="$devtools/rbenv"
+export RUSTUP_HOME="$devtools/rustup"
 
 # Path additions
 PATH="$GOPATH/bin:$PATH"
 PATH="$HOME/.emacs.d/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.poetry/bin:$PATH"
 PATH="$N_PREFIX/bin:$PATH"
 PATH="$NODE_MODULES/bin:$PATH"
 PATH="$PYENV_ROOT/bin:$PATH"
@@ -54,7 +57,7 @@ elif [ -n "$ZSH_NAME" ]; then
   eval "$(zoxide init zsh)"
 fi
 
-[[ -d "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+[[ -d "$CARGO_HOME/env" ]] && source "$CARGO_HOME/env"
 
 gsb() {
   local branches selected_branch
