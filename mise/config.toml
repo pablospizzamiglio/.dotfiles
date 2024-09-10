@@ -1,0 +1,11 @@
+[tools]
+erlang = "27"
+go = "1.23"
+node = "lts"
+python = ["3.8", "3.12"]
+ruby = "3.2"
+
+[settings]
+python_compile = true
+python_venv_auto_create = true
+trusted_config_paths = ["~/.dotfiles/mise/"]

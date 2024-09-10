@@ -31,29 +31,23 @@ devtools="$HOME/.devtools"
 
 export CARGO_HOME="$devtools/cargo"
 export GOPATH="$devtools/go"
-export N_PREFIX="$devtools/n"
+export MISE_DATA_DIR="$devtools/mise"
 export NODE_MODULES="$devtools/node_modules"
-export PYENV_ROOT="$devtools/pyenv"
-export RBENV_ROOT="$devtools/rbenv"
 export RUSTUP_HOME="$devtools/rustup"
 
 # Path additions
 PATH="$GOPATH/bin:$PATH"
 PATH="$HOME/.emacs.d/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
-PATH="$N_PREFIX/bin:$PATH"
+PATH="$MISE_DATA_DIR:$PATH"
 PATH="$NODE_MODULES/bin:$PATH"
-PATH="$PYENV_ROOT/bin:$PATH"
-PATH="$RBENV_ROOT/bin":"$PATH"
 export PATH
 
-eval "$(pyenv init -)"
-
 if [[ -n "$BASH" ]]; then
-  eval "$(rbenv init - bash)"
+  eval "$(mise activate bash)"
   eval "$(zoxide init bash)"
 elif [ -n "$ZSH_NAME" ]; then
-  eval "$(rbenv init - zsh)"
+  eval "$(mise activate zsh)"
   eval "$(zoxide init zsh)"
 fi
 
