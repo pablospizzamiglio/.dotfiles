@@ -1,6 +1,6 @@
 [tools]
 buf = "latest"
-dbmate = "2"
+dbmate = "latest"
 dive = "latest"
 erlang = "27"
 gleam = "1.4"
@@ -11,6 +11,8 @@ node = "lts"
 python = ["3.8", "3.12"]
 rebar = "3"
 ruby = "3.3"
+sops = "latest"
+stern = "latest"
 
 [settings]
 python_compile = true
