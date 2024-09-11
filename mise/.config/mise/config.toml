@@ -5,6 +5,7 @@ go = "1.23"
 node = "lts"
 python = ["3.8", "3.12"]
 ruby = "3.2"
+rebar = "3"
 
 [settings]
 python_compile = true
