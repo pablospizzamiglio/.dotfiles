@@ -1,7 +1,12 @@
 [tools]
+buf = "latest"
+dbmate = "2"
+dive = "latest"
 erlang = "27"
 gleam = "1.4"
 go = "1.23"
+kubectx = "latest"
+lazygit = "latest"
 node = "lts"
 python = ["3.8", "3.12"]
 rebar = "3"
