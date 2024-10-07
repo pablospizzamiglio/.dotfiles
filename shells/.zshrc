@@ -127,7 +127,7 @@ zstyle ':vcs_info:git*' stagedstr "%{$fg[green]%}%{$reset_color%}"
 zstyle ':vcs_info:git*' unstagedstr "%{$fg[red]%}%{$reset_color%}"
 zstyle ':vcs_info:git*+set-message:*' hooks git-dirty
 
-# Set up the prompt 
+# Set up the prompt
 # - without priviledge information
 # - with VCS information
 setopt prompt_subst
@@ -171,7 +171,7 @@ case $TERM in
       print -Pn "\e]0;%n@%M:%~\a"
     }
     preexec() {
-      print -Pn "\e]83;title \"$1\"\a" 
+      print -Pn "\e]83;title \"$1\"\a"
       print -Pn "\e]0;%n@%M:%~ ($1)\a"
     }
     ;;
@@ -184,6 +184,15 @@ source "$HOME/.exports"
 # shellcheck source=/dev/null
 [[ -f "$HOME/.extras" ]] && source "$HOME/.extras"
 
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/fzf/shell/key-bindings.zsh
+
+if [[ "$(uname -s)" == "Linux" ]]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/fzf/shell/key-bindings.zsh
+fi
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  source <(fzf --zsh)
+fi
