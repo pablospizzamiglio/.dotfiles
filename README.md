@@ -14,7 +14,7 @@ Clone into `$HOME` and then run:
 ```shell
 cd .dotfiles
 
-stow */
+stow --no-folding */
 ```
 
 ## How to Remove
@@ -26,5 +26,5 @@ stow -D */
 ## How to Re-apply
 
 ```shell
-stow -R */
+stow --no-folding -R */
 ```
