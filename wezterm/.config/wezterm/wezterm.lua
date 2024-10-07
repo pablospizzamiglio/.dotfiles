@@ -17,7 +17,7 @@ end
 config.color_scheme = "Catppuccin Macchiato"
 -- config.font = wezterm.font("Fira Code Nerd Font Mono")
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 11.0
+config.font_size = 15.0
 -- config.line_height = 1.4
 config.line_height = 1.2
 
