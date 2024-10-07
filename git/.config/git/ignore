@@ -1,0 +1,12 @@
+# MacOS system file
+.DS_Store
+
+# JetBrains IDE
+.idea/
+
+# Vim swap
+*.sw[p|o]
+*~
+
+# Project direnv cache
+.direnv/
