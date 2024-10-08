@@ -28,5 +28,8 @@ config.line_height = 1.2
 -- 	bottom = "0.5cell",
 -- }
 
+-- config.window_decorations = "TITLE | RESIZE | INTEGRATED_BUTTONS"
+-- config.integrated_title_button_style = "Gnome"
+
 -- and finally, return the configuration to wezterm
 return config
