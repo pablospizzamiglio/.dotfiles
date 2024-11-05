@@ -38,6 +38,7 @@ key[Shift-Control-Left]="${terminfo[kLFT6]}"
 key[Shift-Control-Right]="${terminfo[kRIT6]}"
 key[Shift-Alt-Left]="${terminfo[kLFT4]}"
 key[Shift-Alt-Right]="${terminfo[kRIT4]}"
+key[Ctrl-Backspace]="${terminfo[cub1]}"
 
 # Setup key accordingly
 [[ -n "${key[Home]}"                ]] && bindkey -- "${key[Home]}"                 beginning-of-line
@@ -60,6 +61,7 @@ key[Shift-Alt-Right]="${terminfo[kRIT4]}"
 [[ -n "${key[Shift-Control-Right]}" ]] && bindkey -- "${key[Shift-Control-Right]}"  end-of-line
 [[ -n "${key[Shift-Alt-Left]}"      ]] && bindkey -- "${key[Shift-Alt-Left]}"       beginning-of-line
 [[ -n "${key[Shift-Alt-Right]}"     ]] && bindkey -- "${key[Shift-Alt-Right]}"      end-of-line
+[[ -n "${key[Ctrl-Backspace]}"      ]] && bindkey -- "${key[Ctrl-Backspace]}"       backward-kill-word
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
