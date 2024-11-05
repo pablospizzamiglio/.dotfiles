@@ -34,24 +34,32 @@ key[Control-Left]="${terminfo[kLFT5]}"
 key[Control-Right]="${terminfo[kRIT5]}"
 key[Alt-Left]="${terminfo[kLFT3]}"
 key[Alt-Right]="${terminfo[kRIT3]}"
+key[Shift-Control-Left]="${terminfo[kLFT6]}"
+key[Shift-Control-Right]="${terminfo[kRIT6]}"
+key[Shift-Alt-Left]="${terminfo[kLFT4]}"
+key[Shift-Alt-Right]="${terminfo[kRIT4]}"
 
 # Setup key accordingly
-[[ -n "${key[Home]}"          ]] && bindkey -- "${key[Home]}"          beginning-of-line
-[[ -n "${key[End]}"           ]] && bindkey -- "${key[End]}"           end-of-line
-[[ -n "${key[Insert]}"        ]] && bindkey -- "${key[Insert]}"        overwrite-mode
-[[ -n "${key[Backspace]}"     ]] && bindkey -- "${key[Backspace]}"     backward-delete-char
-[[ -n "${key[Delete]}"        ]] && bindkey -- "${key[Delete]}"        delete-char
-[[ -n "${key[Up]}"            ]] && bindkey -- "${key[Up]}"            up-line-or-beginning-search
-[[ -n "${key[Down]}"          ]] && bindkey -- "${key[Down]}"          down-line-or-beginning-search
-[[ -n "${key[Left]}"          ]] && bindkey -- "${key[Left]}"          backward-char
-[[ -n "${key[Right]}"         ]] && bindkey -- "${key[Right]}"         forward-char
-[[ -n "${key[PageUp]}"        ]] && bindkey -- "${key[PageUp]}"        beginning-of-buffer-or-history
-[[ -n "${key[PageDown]}"      ]] && bindkey -- "${key[PageDown]}"      end-of-buffer-or-history
-[[ -n "${key[Shift-Tab]}"     ]] && bindkey -- "${key[Shift-Tab]}"     reverse-menu-complete
-[[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
-[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
-[[ -n "${key[Alt-Left]}"      ]] && bindkey -- "${key[Alt-Left]}"      backward-word
-[[ -n "${key[Alt-Right]}"     ]] && bindkey -- "${key[Alt-Right]}"     forward-word
+[[ -n "${key[Home]}"                ]] && bindkey -- "${key[Home]}"                 beginning-of-line
+[[ -n "${key[End]}"                 ]] && bindkey -- "${key[End]}"                  end-of-line
+[[ -n "${key[Insert]}"              ]] && bindkey -- "${key[Insert]}"               overwrite-mode
+[[ -n "${key[Backspace]}"           ]] && bindkey -- "${key[Backspace]}"            backward-delete-char
+[[ -n "${key[Delete]}"              ]] && bindkey -- "${key[Delete]}"               delete-char
+[[ -n "${key[Up]}"                  ]] && bindkey -- "${key[Up]}"                   up-line-or-beginning-search
+[[ -n "${key[Down]}"                ]] && bindkey -- "${key[Down]}"                 down-line-or-beginning-search
+[[ -n "${key[Left]}"                ]] && bindkey -- "${key[Left]}"                 backward-char
+[[ -n "${key[Right]}"               ]] && bindkey -- "${key[Right]}"                forward-char
+[[ -n "${key[PageUp]}"              ]] && bindkey -- "${key[PageUp]}"               beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}"            ]] && bindkey -- "${key[PageDown]}"             end-of-buffer-or-history
+[[ -n "${key[Shift-Tab]}"           ]] && bindkey -- "${key[Shift-Tab]}"            reverse-menu-complete
+[[ -n "${key[Control-Left]}"        ]] && bindkey -- "${key[Control-Left]}"         backward-word
+[[ -n "${key[Control-Right]}"       ]] && bindkey -- "${key[Control-Right]}"        forward-word
+[[ -n "${key[Alt-Left]}"            ]] && bindkey -- "${key[Alt-Left]}"             backward-word
+[[ -n "${key[Alt-Right]}"           ]] && bindkey -- "${key[Alt-Right]}"            forward-wordi
+[[ -n "${key[Shift-Control-Left]}"  ]] && bindkey -- "${key[Shift-Control-Left]}"   beginning-of-line
+[[ -n "${key[Shift-Control-Right]}" ]] && bindkey -- "${key[Shift-Control-Right]}"  end-of-line
+[[ -n "${key[Shift-Alt-Left]}"      ]] && bindkey -- "${key[Shift-Alt-Left]}"       beginning-of-line
+[[ -n "${key[Shift-Alt-Right]}"     ]] && bindkey -- "${key[Shift-Alt-Right]}"      end-of-line
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
