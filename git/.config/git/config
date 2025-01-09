@@ -28,7 +28,7 @@
 [include]
     path = ./catppuccin.gitconfig
 [delta]
-    syntax-theme = catppuccin-macchiato
+    features = catppuccin-macchiato
     navigate = true
     line-numbers = true
 [merge]
