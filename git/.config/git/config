@@ -25,12 +25,13 @@
     fsmonitor = true
 [interactive]
     diffFilter = delta --color-only
+[include]
+    path = ./catppuccin.gitconfig
 [delta]
-    syntax-theme = Catppuccin-macchiato
+    syntax-theme = catppuccin-macchiato
     navigate = true
-    light = false
     line-numbers = true
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 [diff]
     colorMoved = default
