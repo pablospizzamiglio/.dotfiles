@@ -8,6 +8,7 @@ lazygit = "latest"
 node = "lts"
 python = "latest"
 ruby = "latest"
+rust = "latest"
 sops = "latest"
 stern = "latest"
 
