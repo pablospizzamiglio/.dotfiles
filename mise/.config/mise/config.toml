@@ -16,3 +16,4 @@ stern = "latest"
 python_compile = true
 python_venv_auto_create = true
 trusted_config_paths = ["~/.dotfiles/mise/"]
+idiomatic_version_file_enable_tools = ["node", "python", "ruby"]
