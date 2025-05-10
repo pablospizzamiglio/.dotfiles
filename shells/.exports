@@ -28,6 +28,7 @@ if [[ -z "$WSL_DISTRO_NAME" ]]; then
 fi
 
 devtools="$HOME/.devtools"
+[[ ! -d "$devtools" ]] && mkdir "$devtools"
 
 export CARGO_HOME="$devtools/cargo"
 export GOPATH="$devtools/go"
