@@ -199,14 +199,20 @@ source "$HOME/.exports"
 [[ -f "$HOME/.extras" ]] && source "$HOME/.extras"
 
 
-if [[ "$(uname -s)" == "Linux" ]]; then
-  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /usr/share/fzf/shell/key-bindings.zsh
-fi
+os_type=$(uname -s)
+if [[ "$os_type" == "Linux" ]]; then
+  os_id=$(grep "^ID=" /etc/os-release | cut -d'=' -f2 | tr -d '"')
 
-if [[ "$(uname -s)" == "Darwin" ]]; then
+  if [[ "$os_id" == "fedora" ]]; then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  elif [[ "$os_id" == "arch" ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  fi
+elif [[ "$os_type" == "Darwin" ]]; then
   source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  source <(fzf --zsh)
 fi
+
+source <(fzf --zsh)
