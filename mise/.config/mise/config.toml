@@ -2,6 +2,7 @@
 buf = "latest"
 dbmate = "latest"
 dive = "latest"
+eza = "latest"
 go = "latest"
 kubectx = "latest"
 lazygit = "latest"
