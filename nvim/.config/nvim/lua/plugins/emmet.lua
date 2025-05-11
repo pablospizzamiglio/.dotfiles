@@ -1,8 +1,10 @@
-return {
-  "williamboman/mason.nvim",
-  opts = {
-    ensure_installed = {
-      "emmet-language-server",
-    },
-  },
-}
+return {}
+
+-- return {
+--   "williamboman/mason.nvim",
+--   opts = {
+--     ensure_installed = {
+--       "emmet-language-server",
+--     },
+--   },
+-- }
