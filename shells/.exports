@@ -23,9 +23,11 @@ export PYTHONUNBUFFERED=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
-if [[ -z "$WSL_DISTRO_NAME" ]]; then
-  # export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
-fi
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
+# if [[ -z "$WSL_DISTRO_NAME" ]]; then
+#   export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+# fi
 
 devtools="$HOME/.devtools"
 [[ ! -d "$devtools" ]] && mkdir "$devtools"
