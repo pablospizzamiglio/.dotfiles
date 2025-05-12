@@ -29,7 +29,7 @@ export ELECTRON_OZONE_PLATFORM_HINT=wayland
 #   export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 # fi
 
-devtools="$HOME/.devtools"
+devtools="$HOME/devtools"
 [[ ! -d "$devtools" ]] && mkdir "$devtools"
 
 export CARGO_HOME="$devtools/cargo"

@@ -1,20 +1,11 @@
 [tools]
-buf = "latest"
-dbmate = "latest"
-dive = "latest"
-eza = "latest"
 go = "latest"
-kubectx = "latest"
-lazygit = "latest"
 node = "lts"
 python = "latest"
 ruby = "latest"
-rust = "latest"
-sops = "latest"
-stern = "latest"
 
 [settings]
 python_compile = true
 python_venv_auto_create = true
-trusted_config_paths = ["~/.dotfiles/mise/"]
+trusted_config_paths = ["~/dotfiles/mise/"]
 idiomatic_version_file_enable_tools = ["node", "python", "ruby"]
