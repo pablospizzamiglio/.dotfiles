@@ -56,7 +56,7 @@ key[Ctrl-Backspace]="${terminfo[cub1]}"
 [[ -n "${key[Control-Left]}"        ]] && bindkey -- "${key[Control-Left]}"         backward-word
 [[ -n "${key[Control-Right]}"       ]] && bindkey -- "${key[Control-Right]}"        forward-word
 [[ -n "${key[Alt-Left]}"            ]] && bindkey -- "${key[Alt-Left]}"             backward-word
-[[ -n "${key[Alt-Right]}"           ]] && bindkey -- "${key[Alt-Right]}"            forward-wordi
+[[ -n "${key[Alt-Right]}"           ]] && bindkey -- "${key[Alt-Right]}"            forward-word
 [[ -n "${key[Shift-Control-Left]}"  ]] && bindkey -- "${key[Shift-Control-Left]}"   beginning-of-line
 [[ -n "${key[Shift-Control-Right]}" ]] && bindkey -- "${key[Shift-Control-Right]}"  end-of-line
 [[ -n "${key[Shift-Alt-Left]}"      ]] && bindkey -- "${key[Shift-Alt-Left]}"       beginning-of-line
@@ -197,7 +197,6 @@ source "$HOME/.exports"
 # $HOME/.extras can be used for other settings you don’t want to commit
 # shellcheck source=/dev/null
 [[ -f "$HOME/.extras" ]] && source "$HOME/.extras"
-
 
 os_type=$(uname -s)
 if [[ "$os_type" == "Linux" ]]; then
