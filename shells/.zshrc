@@ -1,7 +1,7 @@
-# .zshrc
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+[[ -f "$HOME/.exports" ]] && source "$HOME/termsupport.zsh"
 
 # Load env vars
 # source "$HOME/.zshenv"
@@ -92,35 +92,10 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 
 # Load version control information
-# https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information
-# https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples
+# - https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information
+# - https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples
 autoload -Uz add-zsh-hook vcs_info
 add-zsh-hook precmd vcs_info
-
-# Taken from ohmyzsh
-# https://github.com/ohmyzsh/ohmyzsh/blob/1d09c6bb0a950756a65b02457842933e3aa493eb/lib/termsupport.zsh#L147
-# Emits the control sequence to notify many terminal emulators
-# of the cwd
-#
-# Identifies the directory using a file: URI scheme, including
-# the host name to disambiguate local vs. remote paths.
-function termsupport_cwd() {
-  # Percent-encode the host and path names.
-  local url_host url_path
-  url_host="$HOST" || return 1
-  url_path="$PWD" || return 1
-
-  # Konsole errors if the HOST is provided
-  [[ -z "$KONSOLE_PROFILE_NAME" && -z "$KONSOLE_DBUS_SESSION"  ]] || url_host=""
-
-  # common control sequence (OSC 7) to set current host and path
-  printf "\e]7;file://%s%s\e\\" "${url_host}" "${url_path}"
-}
-
-# Use a precmd hook instead of a chpwd hook to avoid contaminating output
-# i.e. when a script or function changes directory without `cd -q`, chpwd
-# will be called the output may be swallowed by the script or function.
-add-zsh-hook precmd termsupport_cwd
 
 +vi-git-dirty() {
   local git_status=$(git --no-optional-locks status --porcelain 2> /dev/null | tail -n 1)
@@ -172,27 +147,8 @@ setopt interactive_comments # allow comments in interactive shells
 # Disable paste highlight
 zle_highlight=('paste:none')
 
-# Set up window title
-# - without priviledge information
-case $TERM in
-  termite|*xterm*|rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term|foot)
-    precmd() { print -Pn "\e]0;%n@%M:%~\a" }
-    preexec() { print -Pn "\e]0;%n@%M:%~ ($1)\a" }
-    ;;
-  screen|screen-256color)
-    precmd() {
-      print -Pn "\e]83;title \"$1\"\a"
-      print -Pn "\e]0;%n@%M:%~\a"
-    }
-    preexec() {
-      print -Pn "\e]83;title \"$1\"\a"
-      print -Pn "\e]0;%n@%M:%~ ($1)\a"
-    }
-    ;;
-esac
-
-source "$HOME/.aliases"
-source "$HOME/.exports"
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -f "$HOME/.exports" ]] && source "$HOME/.exports"
 
 # $HOME/.extras can be used for other settings you don’t want to commit
 # shellcheck source=/dev/null
