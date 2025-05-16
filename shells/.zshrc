@@ -138,7 +138,8 @@ setopt share_history # share command history data
 
 unsetopt beep # disable beeping
 setopt aliases # expand aliases
-setopt auto_pushd
+setopt auto_pushd # make cd push the old directory onto the directory stack
+setopt pushd_ignore_dups # don't push the same directory twice
 setopt menu_complete # automatically highlight first element of completion menu
 setopt auto_list # automatically list choices on ambiguos completion
 setopt complete_in_word # complete from both ends of a word
