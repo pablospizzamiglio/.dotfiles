@@ -24,10 +24,12 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-source "$HOME/.aliases"
-source "$HOME/.exports"
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+[ -f "$HOME/.exports" ] && source "$HOME/.exports"
 
 # $HOME/.extras can be used for other settings you don’t want to commit
 # shellcheck source=/dev/null
 [ -f "$HOME/.extras" ] && source "$HOME/.extras"
-[ -d "$HOME/.devtools/cargo/env" ] && source "$HOME/.devtools/cargo/env"
+
+# Rust tooling
+[ -d "$HOME/devtools/cargo/env" ] && source "$HOME/devtools/cargo/env"
