@@ -1,8 +1,17 @@
 [tools]
+buf = "latest"
+dbmate = "latest"
+dive = "latest"
+eza = "latest"
 go = "latest"
+kubectx = "latest"
+lazygit = "latest"
 node = "lts"
 python = "latest"
 ruby = "latest"
+rust = "latest"
+sops = "latest"
+stern = "latest"
 
 [settings]
 python_compile = true
