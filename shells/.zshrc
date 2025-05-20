@@ -169,6 +169,7 @@ if [[ "$os_type" == "Linux" ]]; then
 elif [[ "$os_type" == "Darwin" ]]; then
   source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
 source <(fzf --zsh)
