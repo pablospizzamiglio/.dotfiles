@@ -12,9 +12,9 @@
 Clone into `$HOME` and then run:
 
 ```shell
-cd .dotfiles
+cd dotfiles
 
-stow --no-folding */
+stow --no-folding -R */
 ```
 
 ## How to Remove
