@@ -1,5 +1,3 @@
-# .bashrc
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
@@ -28,7 +26,6 @@ unset rc
 [ -f "$HOME/.exports" ] && source "$HOME/.exports"
 
 # $HOME/.extras can be used for other settings you don’t want to commit
-# shellcheck source=/dev/null
 [ -f "$HOME/.extras" ] && source "$HOME/.extras"
 
 # Rust tooling
