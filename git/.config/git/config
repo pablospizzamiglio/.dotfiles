@@ -1,17 +1,28 @@
 [color]
-    ui = true
+	ui = true
 [completion]
 	commands = -gitk
+[core]
+	pager = delta
+	fsmonitor = true
 [fetch]
 	prune = true
+[interactive]
+	diffFilter = delta --color-only
+[merge]
+	conflictstyle = zdiff3
+[rebase]
+	autosquash = true
 [init]
 	defaultBranch = main
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [user]
-	name = pablospizzamiglio
+	name = Pablo
 	email = spizzamiglio.pablo@gmail.com
 	signingKey = ~/.ssh/id_ed25519.pub
+# [github]
+# 	user = pablospizzamiglio
 [gpg]
 	format = ssh
 [commit]
@@ -20,18 +31,12 @@
 	gpgSign = true
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
-[core]
-    pager = delta
-    fsmonitor = true
-[interactive]
-    diffFilter = delta --color-only
-[include]
-    path = ./catppuccin.gitconfig
-[delta]
-    features = catppuccin-macchiato
-    navigate = true
-    line-numbers = true
-[merge]
-    conflictstyle = zdiff3
 [diff]
-    colorMoved = default
+	colorMoved = default
+	renames = copies
+[delta]
+	features = catppuccin-macchiato
+	navigate = true
+	line-numbers = true
+[include]
+	path = ./catppuccin.gitconfig
